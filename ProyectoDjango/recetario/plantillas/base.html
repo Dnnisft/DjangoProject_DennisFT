@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Recetario  - {% block titulo %}{% endblock %}</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href='http://fonts.googleapis.com/css?family=Satisfy|Fjalla+One|Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='{{STATIC_URL}}css/defaultss.css'>
+{% block style_css %}{% endblock %}
+  <script src='{{STATIC_URL}}js/jquery-1.7.2.min.js'></script>
+  <script src='{{STATIC_URL}}js/demo.js'></script>
+<!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+<body>
+<div id="wrapper">
+	<div id="page" class="container">
+		<div id="content"> <a href="#" class="image-style"><img src="/static/images/platillos1.jpg" width="725" height="300" alt="" /></a>
+			<div id="box1" class="post">
+					<h2 class="title"><a href="#">Bienvenidos A Recetas Culinarias </a></h2>
+				<p>Este es <strong>All Recipes</strong>, un sitio web diseñado para ti que te encanta el ambito de la
+					cocina para que encuentres toda la informacion necesaria para incrementar tus conocimientos
+					y que preprar esps platillos tan exquisitos que siempre deseaste deleitar y si eres un experto CHEF pues tambien puedes registrarte y 
+					compartirnos tus recetas.</p>
+					
+					
+				<h2>Que puedes hacer en este sitio:</h2>
+				
+				<li><strong>Registrarte en nuestro sitio para que puedas compartir tus recetas </strong></li>
+				<li><strong>Conoce a nuestros usuarios registrados, Junto a sus recetas personales</strong></li>
+				<li><strong>Aprender Nuevas Recetas que tenemos para ti </strong></li>
+				<li><strong>Conocer artes culinarias exoticas y aprender a prepararlas </strong></li>
+				<li><strong>Tutoriales practicos de cocina </strong></li>
+				<li><strong>Participar agregando comentarios a las resetas </strong></li>
+				<li><strong>Identificarte como usuario </strong></li>
+				
+					
+			</div>
+			
+			
+			<div id="box2" class="post">
+			
+				<h2 class="title"><a href="#">Buen Provecho | bon appétit |  </a></h2>
+				{% block encabezado %}{% endblock %}
+				<p>{% block contenido %}{% endblock %} </p>
+			</div>
+			
+			<div id="footer">
+				<p>Copyright (c) 2013 Tecnologias Emergentes All rights reserved. Design by <a href="#">DEFT</a></p>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div id="logo">
+				<h1><a href="#">ALl Recipes</a></h1>
+			</div>
+			<div id="menu" class="box">
+				<ul>
+					<li><a href='/'>Inicio</a></li>
+		  <li><a href='/usuarios'>Usuarios registrados</a></li>
+		  <li><a href='/usuario/nuevo'>Registrarse</a></li>		  
+		  <li><a href='/ingresar'>Login</a></li>
+		  <li><a href='/cerrar'>logout</a></li>
+		  <li><a href='/recetas'>Recetas</a></li>
+			<li><a href="/comenta">Comenta</a></li>
+		  <li><a href='/sobre'>Sobre</a></li>
+			<li><a href="/contacto">Contactanos</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix">&nbsp;</div>
+</div>
+</body>
+</html>
+

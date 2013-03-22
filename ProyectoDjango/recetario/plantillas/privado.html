@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block titulo %}Bienvenido{% endblock %}
+{% block encabezado %} 
+	<h1>Bienvenido:</h1>
+{% endblock %}
+{% block contenido %}
+	<p><h2> {{usuario.username|upper}}</h2> 
+		La última vez que te vimos por aquí fue el {{usuario.last_login}}.</p>
+
+
+	<p><h4>Eres miembro desde el {{usuario.date_joined}}</h4></p>
+	
+	
+<ul>
+	{% for dato in usuarios %}
+	<li>{{dato.username|capfirst}} - <em>{{dato.email}}</em>
+		<ul>
+			{% for item in recetas %}
+				{% if item.usuario == dato %}
+					<li>{{item}}</li>
+				{% endif %}
+			{% empty %}
+				<li>Este usuario aún no ha registrado recetas.</li>
+			{% endfor %}
+		</ul>
+	</li>
+	{% empty %}
+	
+	{% endfor %}
+</ul>
+{% endblock %}

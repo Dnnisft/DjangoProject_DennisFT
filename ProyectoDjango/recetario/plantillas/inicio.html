@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% comment %} Aqui van comentarios {% endcomment %}
+
+{% block titulo %} Inicio {% endblock %}
+
+{% block encabezado %} 
+	<h2>Recetario: </h2>
+{% endblock %}
+
+{% block contenido %}
+  <p>
+	<strong>  Actualmente tenemos registradas: <h2>
+     {% with total=recetas.count %} 
+		{{total}} receta{{total|pluralize}}
+	 {% endwith %}</strong></h2>
+  </p>
+	<ul>	<h3>	
+	  {% for dato in recetas %}
+	  <li class="{% cycle 'impar' 'par' %}"><a href= "{% url 'principal.views.detalle_receta' dato.id %}">{{dato.titulo}}</a><br></li>
+	  {% empty %}
+	  <li>No hay recetas registradas aún.</li>
+	  {% endfor %}<h3>
+	</ul>
+{% endblock %}
